@@ -1,0 +1,111 @@
+.geometric-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.18;
+  will-change: transform;
+  transition: opacity 0.3s ease;
+}
+
+.shape-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Circle */
+.circle-inner {
+  border: 2px solid var(--accent-brown);
+  border-radius: 50%;
+}
+
+/* Square */
+.square-inner {
+  border: 2px solid var(--primary-beige);
+  border-radius: 3px;
+}
+
+/* Rectangle */
+.rectangle-inner {
+  width: 100%;
+  height: 60%;
+  border: 2px solid var(--accent-brown);
+  border-radius: 2px;
+}
+
+/* Cross */
+.cross-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cross-line {
+  position: absolute;
+  background-color: var(--primary-beige);
+}
+
+.cross-line-1 {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.cross-line-2 {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* Lines */
+.lines-inner {
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-brown);
+}
+
+/* Mobile responsiveness - reduce shapes on mobile */
+@media (max-width: 768px) {
+  .shape {
+    opacity: 0.06;
+  }
+  
+  /* Hide every third shape */
+  .shape:nth-child(3n) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .shape {
+    opacity: 0.04;
+  }
+  
+  /* Show only every fourth shape */
+  .shape:not(:nth-child(4n)) {
+    display: none;
+  }
+}

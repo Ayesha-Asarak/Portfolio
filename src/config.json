@@ -1,0 +1,240 @@
+{
+  "personal": {
+    "name": "AYESHA ASARAK",
+    "displayName": "Ayesha Asarak",
+    "title": "AI Engineer",
+    "tagline": "AI & ML ENGINEERING",
+    "taglineAccent": "DONE WITH EXCELLENCE",
+    "heroDescription": "Hi, I'm Ayesha Asarak—an AI Engineer passionate about building intelligent solutions that drive real-world impact.",
+    "heroTaglineTitle": "Your time is best spent on what you do best",
+    "heroTaglineSubtitle": "Let me turn your data into powerful solutions.",
+    "profileImage": "/profile.png",
+    "profile": "Motivated and detail-oriented B.Sc. (Hons) Artificial Intelligence student with a strong foundation in Data Engineering and a passion for turning data into actionable insights. Experienced in building and optimizing data pipelines, performing data analysis, and handling large datasets. Proven track record of delivering innovative data solutions and collaborating with cross-functional teams to enhance business processes. Skilled in database management, data visualization, and utilizing cloud platforms. Known for excellent problem-solving skills, adaptability, and effective communication, I am eager to apply my technical expertise to drive data-driven decisions in a dynamic environment."
+  },
+  "contact": {
+    "email": "ayeshaasarak@gmail.com",
+    "phone": "",
+    "linkedin": {
+      "display": "Ayesha Asarak",
+      "url": "https://linkedin.com/in/ayesha-asarak"
+    },
+    "github": {
+      "display": "Ayesha Asarak",
+      "url": "https://github.com/ayesha-asarak"
+    }
+  },
+  "education": [
+    {
+      "institution": "University of Moratuwa",
+      "location": "Colombo, Sri Lanka",
+      "period": "May 2022 - 2026",
+      "degree": "B.Sc. (Hons) in Artificial Intelligence",
+      "gpa": ""
+    },
+    {
+      "institution": "V/Rambaikulam.G.M.V",
+      "location": "Vavuniya, Sri Lanka",
+      "period": "Jan 2011 - Aug 2020",
+      "degree": "High School (Secondary Education)",
+      "gpa": "G.C.E A/L: Physical Science Stream"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Polygen Agro",
+      "period": "2024 May - 2025 Oct",
+      "role": "Associate AI/ML Engineer",
+        "image": "/agro.png",
+      "achievements": [
+        "Handled relational data mapping between orders, packages, product details, and product types using Python and React",
+        "Collaborated with backend and design teams to deliver user-friendly, scalable UI solutions",
+        "Built AI-assisted data views for order analysis and decision support"
+      ]
+    },
+    {
+      "company": "iVedha Inc",
+      "period": "2024 Dec - 2025 Jun",
+      "role": "AI ML Developer Intern",
+       "image": "/ivedha.png",
+      "achievements": [
+        "Developed frontend for AutoSad App using Python and React",
+        "Made a research about K-means clustering",
+        "Collaborated with senior engineers to develop K-means++ models"
+      ]
+    },
+    {
+      "company": "HCL Technologies",
+      "period": "2024 Feb - 2024 July",
+      "role": "Data Engineering, AI and ML Intern",
+          "image": "/hcl.png",
+      "achievements": [
+        "Created PPT Generating AI Based Model (Gemini AI) using Python, GeminiAi, React",
+        "Analyzed 15+ Data Cases to improve AI Model",
+        "Collaborated with senior engineers to develop ML solutions",
+        "Managed and queried data from relational and NoSQL databases, enhancing data retrieval efficiency",
+        "Worked with a distributed team, facilitating smooth data integration and communication"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "number": "1",
+      "title": "AI Driven Website Development - Agentsmiths",
+      "subtitle": "Mentored by Rootcode AI",
+      "tech": "React, MongoDB, Python, Firebase",
+      "description": "Developed a web application to create a webpage according to user instructions, reducing time and workhours for individuals.",
+      "contributions": [
+        "Analyzed user messages using NLP and found the problem of the user and sent notifications to Admin",
+        "Implemented user authentication for sign-up, sign-in, and secure user data handling using JWT"
+      ],
+      "link": "View on GitHub",
+      "linkUrl": "https://github.com/PERERALVV/AgentSmiths",
+      "image": "/projects/agent.png"
+    },
+    {
+      "number": "2",
+      "title": "Powerpoint Generating AI Based Model",
+      "subtitle": "Individual Project",
+      "tech": "Python, Gemini AI, React",
+      
+      "description": "Developed a website using Gemini AI to create PowerPoint Presentations based on user commands to save time and can be used by users without PowerPoint knowledge.",
+      "contributions": [],
+      "link": "View on GitHub",
+      "linkUrl": "https://github.com/Ayesha-Asarak/PPTX-project",
+      "image": "/projects/ppt.png"
+    },
+    {
+      "number": "3",
+      "title": "Stamp Calculator Machine",
+      "subtitle": "Team Project",
+      "tech": "C, Arduino Mega, Blender",
+            "image": "/projects/post.png",
+
+      "description": "Developed a system to calculate stamp cost according to the weight of the post to help Sri Lankan Post Service, saving time for employees.",
+      "contributions": [
+        "Calculate human presence with ultrasonic sensor (placed at front, detects customer presence within 25cm range)"
+      ],
+      "link": "View on GitHub",
+      "linkUrl": "https://github.com/Ayesha-Asarak/FirstYearHardwareProject"
+    },
+    {
+      "number": "4",
+      "title": "Food App",
+      "subtitle": "Individual Project",
+      "tech": "Android Studio, Firebase",
+      "image": "/projects/fapp.jpeg",
+      "description": "Developed a Mobile Application to order foods based on customer preferences online.",
+      "contributions": [],
+      "link": "View on GitHub",
+      "linkUrl": "https://github.com/Ayesha-Asarak/Food-App"
+    },
+    {
+      "number": "5",
+      "title": "Summary Generating for Youtube Videos",
+      "subtitle": "Individual Project",
+      "tech": "Python, Gemini AI, React",
+      
+      "image": "/projects/yt.png",
+      "description": "Developed a website using Gemini AI to summarize YouTube videos and provide text summaries.",
+      "contributions": [],
+      "link": "View on GitHub",
+      "linkUrl": "https://github.com/Ayesha-Asarak/video-analyzing"
+    },
+    {
+      "number": "6",
+      "title": "Multi-Agent System for Healthcare Resource Allocation",
+      "subtitle": "Individual Project",
+      "tech": "Python, MESA, React",
+      "description": "The system ensures critical patients receive timely care by efficiently managing resources such as beds, ambulances, and medical supplies across the healthcare network.",
+      "contributions": [],
+      "link": "View on GitHub",
+      "linkUrl": "https://github.com/Ayesha-Asarak"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "skills": ["Python", "Java", "C", "C++"]
+    },
+    {
+      "category": "Libraries",
+      "skills": ["NumPy", "Pandas", "TensorFlow", "PyTorch", "Scikit-Learn", "Matplotlib"]
+    },
+    {
+      "category": "BackEnd",
+      "skills": ["FastAPI", "Node.js"]
+    },
+    {
+      "category": "FrontEnd",
+      "skills": ["React", "HTML", "CSS", "Figma", "Angular", "Next.js"]
+    },
+    {
+      "category": "Databases",
+      "skills": ["MongoDB", "MySQL", "MSSQL"]
+    },
+    {
+      "category": "Mobile",
+      "skills": ["Android Studio"]
+    },
+    {
+      "category": "Cloud Services",
+      "skills": ["Firebase", "AWS"]
+    },
+    {
+      "category": "Version Control",
+      "skills": ["Git"]
+    },
+    {
+      "category": "IDEs",
+      "skills": ["VS Code", "IntelliJ"]
+    }
+  ],
+  "achievements": [],
+  "courses": [
+    {
+      "title": "Machine Learning Specialization",
+      "provider": "Deep Learning.AI"
+    },
+    {
+      "title": "Deep Learning Specialization",
+      "provider": "Deep Learning.AI"
+    },
+    {
+      "title": "AI for Everyone",
+      "provider": "Deep Learning.AI"
+    }
+  ],
+  "activities": [],
+  "languages": ["English", "Tamil", "Sinhala"],
+  "showReferees": false,
+  "referees": [
+    {
+      "name": "DR.(MS) Silva A.T.P.",
+      "title": "Head of the Department",
+      "department": "Faculty of Information Technology",
+      "subdepartment": "Department of Computational Mathematics",
+      "institution": "University of Moratuwa",
+      "email": "thusharip@uom.lk"
+    },
+    {
+      "name": "NAGADEEPTHI M R",
+      "title": "Technical Coach",
+      "department": "",
+      "subdepartment": "",
+      "institution": "HCL Technologies",
+      "email": "nagadeepthi.mr@hcl.com"
+    }
+  ],
+  "navigation": [
+    { "name": "Home", "href": "#home" },
+    { "name": "About", "href": "#about" },
+    { "name": "Experience", "href": "#experience" },
+        { "name": "Skills", "href": "#skills" },
+
+    { "name": "Projects", "href": "#projects" },
+    { "name": "Contact", "href": "#contact" }
+  ],
+  "footer": {
+    "copyright": "2026 Ayesha Asarak. All rights reserved."
+  }
+}

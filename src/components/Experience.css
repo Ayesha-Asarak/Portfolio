@@ -1,0 +1,242 @@
+/* .experience {
+  background-color: var(--light-beige);
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
+  background-color: #ffffff;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.card-number {
+  font-family: var(--font-serif);
+  font-size: 8rem;
+  font-weight: 300;
+  color: var(--light-beige);
+  line-height: 1;
+  user-select: none;
+}
+
+.card-details {
+  padding: 1rem 0;
+}
+
+.company-name {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.period {
+  font-size: 0.95rem;
+  color: var(--accent-brown);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.role-title {
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.achievements-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.achievements-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--primary-dark);
+  opacity: 0.85;
+  font-weight: 300;
+}
+
+.achievements-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-brown);
+  font-weight: 600;
+}
+
+@media (max-width: 968px) {
+  .experience-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .card-number {
+    font-size: 6rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-number {
+    font-size: 4rem;
+  }
+
+  .company-name {
+    font-size: 1.5rem;
+  }
+} */
+
+
+.experience {
+  background: #f4efe9;
+  padding: 6rem 0;
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* CARD BASE */
+.experience-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 5rem;
+  background: #f7f3ee;
+  overflow: hidden;
+}
+
+/* DARK CARD */
+.experience-card.dark {
+  background: #1f1f1f;
+}
+
+/* REVERSE LAYOUT */
+.experience-card.reverse .card-text {
+  order: 2;
+}
+
+.experience-card.reverse .card-image {
+  order: 1;
+}
+
+/* BIG NUMBER */
+.card-number {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 10rem;
+  font-family: serif;
+  color: rgba(180, 160, 130, 0.25);
+  pointer-events: none;
+}
+
+/* TEXT */
+.card-text {
+  max-width: 480px;
+  z-index: 2;
+}
+
+.company-name {
+  font-family: serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.period {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #b59b78;
+}
+
+.role-title {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dark .company-name,
+.dark .role-title,
+.dark li {
+  color: #ffffff;
+}
+
+.dark .period {
+  color: #cbb89d;
+}
+
+/* LIST */
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievements-list li {
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* IMAGE */
+.card-image {
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.card-image img {
+  width: 100%;
+  max-width: 340px;
+  object-fit: cover;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* BUTTON */
+.cta-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background: #c4ab86;
+  border: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .experience-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .card-number {
+    font-size: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .card-image {
+    margin-top: 2rem;
+  }
+}

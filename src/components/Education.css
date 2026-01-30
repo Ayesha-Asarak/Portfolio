@@ -1,0 +1,163 @@
+.education {
+  background-color: #ffffff;
+}
+
+.education-timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 5rem;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--accent-brown);
+}
+
+.education-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2.5rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent-brown);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 3px var(--light-beige);
+}
+
+.institution-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.location {
+  font-size: 0.95rem;
+  color: var(--accent-brown);
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+}
+
+.period {
+  font-size: 0.9rem;
+  color: var(--accent-brown);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.degree {
+  font-size: 1rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.gpa {
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.referees-section {
+  margin-top: 5rem;
+}
+
+.referees-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.05em;
+}
+
+.referees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.referee-card {
+  background-color: var(--light-beige);
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.referee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.referee-name {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.referee-title {
+  font-size: 0.95rem;
+  color: var(--accent-brown);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.referee-department,
+.referee-subdepartment,
+.referee-institution {
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  opacity: 0.85;
+  margin-bottom: 0.25rem;
+  font-weight: 300;
+}
+
+.referee-email {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--accent-brown);
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.referee-email:hover {
+  color: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .education-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .education-item {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-marker {
+    left: -2.25rem;
+  }
+
+  .referees-grid {
+    grid-template-columns: 1fr;
+  }
+}

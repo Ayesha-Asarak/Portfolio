@@ -1,0 +1,75 @@
+.stats-section {
+  padding: 4rem 1rem;
+  background-color: #161212;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background-color: #1c1612;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  opacity: 0;           /* hidden initially */
+  transform: translateY(20px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card.hovered {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(198, 190, 181, 0.3);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #9C8D7C;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #D5D2CB;
+}
+
+/* Keyframe for fade + slide */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .stats-container {
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem 2rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+}
