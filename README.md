@@ -135,3 +135,4 @@ See [CUSTOMIZATION_GUIDE.md](CUSTOMIZATION_GUIDE.md) for advanced customization.
 
 © 2026 Ayesha Asarak. All rights reserved.
 # Portfolio
+# Portfolio
