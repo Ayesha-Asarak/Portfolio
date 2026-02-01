@@ -8,7 +8,7 @@
     "heroDescription": "Hi, I'm Ayesha Asarak—an AI Engineer passionate about building intelligent solutions that drive real-world impact.",
     "heroTaglineTitle": "Your time is best spent on what you do best",
     "heroTaglineSubtitle": "Let me turn your data into powerful solutions.",
-    "profileImage": "/profile.png",
+    "profileImage": "/profilee.png",
     "profile": "Motivated and detail-oriented B.Sc. (Hons) Artificial Intelligence student with a strong foundation in Data Engineering and a passion for turning data into actionable insights. Experienced in building and optimizing data pipelines, performing data analysis, and handling large datasets. Proven track record of delivering innovative data solutions and collaborating with cross-functional teams to enhance business processes. Skilled in database management, data visualization, and utilizing cloud platforms. Known for excellent problem-solving skills, adaptability, and effective communication, I am eager to apply my technical expertise to drive data-driven decisions in a dynamic environment."
   },
   "contact": {
@@ -23,22 +23,26 @@
       "url": "https://github.com/ayesha-asarak"
     }
   },
-  "education": [
-    {
-      "institution": "University of Moratuwa",
-      "location": "Colombo, Sri Lanka",
-      "period": "May 2022 - 2026",
-      "degree": "B.Sc. (Hons) in Artificial Intelligence",
-      "gpa": ""
-    },
-    {
-      "institution": "V/Rambaikulam.G.M.V",
-      "location": "Vavuniya, Sri Lanka",
-      "period": "Jan 2011 - Aug 2020",
-      "degree": "High School (Secondary Education)",
-      "gpa": "G.C.E A/L: Physical Science Stream"
-    }
-  ],
+"education": [
+  {
+    "institution": "University of Moratuwa",
+    "location": "Colombo, Sri Lanka",
+    "period": "May 2022 - 2026",
+    "degree": "B.Sc. (Hons) in Artificial Intelligence",
+    "gpa": "3.2 / 4.0",
+    "logo": "/projects/uni.png",
+    "description": "I am currently pursuing a Bachelor's degree in Artificial Intelligence at the University of Moratuwa, where I am gaining deep expertise in Software Engineering."
+  },
+  {
+    "institution": "V/Rambaikulam.G.M.V",
+    "location": "Vavuniya, Sri Lanka",
+    "period": "Jan 2011 - Aug 2020",
+    "degree": "G.C.E A/L: Physical Science Stream",
+  "logo": "/projects/scl.jpeg",
+    "description": "I successfully completed both my G.C.E. Ordinary Level and G.C.E. Advanced Level examinations at a prestigious and renowned institution, recognized for its excellence."
+  }
+]
+,
   "experience": [
     {
       "company": "Polygen Agro",

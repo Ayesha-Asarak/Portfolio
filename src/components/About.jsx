@@ -13,58 +13,135 @@ const About = () => {
   const aboutInfoRef = useRef(null)
   const achievementsRef = useRef(null)
 
-  useEffect(() => {
-    const section = sectionRef.current
-    const isMobile = window.innerWidth <= 768
+useEffect(() => {
+  const ctx = gsap.context(() => {
 
-    // Animate section title
-    gsap.fromTo(titleRef.current,
+    const baseTrigger = {
+      start: 'top 80%',
+      toggleActions: 'play reverse play reverse'
+    }
+
+    /* SECTION TITLE */
+    gsap.fromTo(
+      titleRef.current,
+      { opacity: 0, y: 60 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: titleRef.current,
+          ...baseTrigger
+        }
+      }
+    )
+
+    /* PROFILE SECTION (NAME, ROLE, PROFILE TEXT) */
+    gsap.fromTo(
+      '.profile-section > *',
       { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
         duration: 0.8,
+        stagger: 0.15,
+        ease: 'power3.out',
         scrollTrigger: {
-          trigger: section,
-          start: 'top 80%',
-          end: 'top 50%',
-          toggleActions: 'play none none reverse'
+          trigger: '.profile-section',
+          ...baseTrigger
         }
       }
     )
 
-    // Animate about info from left (or from top on mobile)
-    gsap.fromTo(aboutInfoRef.current,
-      { opacity: 0, x: isMobile ? 0 : -100, y: isMobile ? 30 : 0 },
+    /* ABOUT INFO BLOCK */
+    gsap.fromTo(
+      aboutInfoRef.current,
+      { opacity: 0, y: 60 },
       {
         opacity: 1,
-        x: 0,
         y: 0,
-        duration: 0.8,
+        duration: 0.9,
+        ease: 'power3.out',
         scrollTrigger: {
-          trigger: section,
-          start: 'top 70%',
-          toggleActions: 'play none none reverse'
+          trigger: aboutInfoRef.current,
+          ...baseTrigger
         }
       }
     )
 
-    // Animate achievements from right (or from top on mobile)
-    gsap.fromTo(achievementsRef.current,
-      { opacity: 0, x: isMobile ? 0 : 100, y: isMobile ? 30 : 0 },
+    /* CONTACT ITEMS */
+    gsap.fromTo(
+      '.contact-item',
+      { opacity: 0, y: 40 },
       {
         opacity: 1,
-        x: 0,
         y: 0,
-        duration: 0.8,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: 'power2.out',
         scrollTrigger: {
-          trigger: section,
-          start: 'top 70%',
-          toggleActions: 'play none none reverse'
+          trigger: '.contact-info',
+          ...baseTrigger
         }
       }
     )
-  }, [])
+
+    /* ACHIEVEMENTS / COURSES / LANGUAGES WRAPPER */
+    gsap.fromTo(
+      achievementsRef.current,
+      { opacity: 0, y: 60 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: achievementsRef.current,
+          ...baseTrigger
+        }
+      }
+    )
+
+    /* COURSE LIST ITEMS */
+    gsap.fromTo(
+      '.courses-section li',
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.courses-section',
+          ...baseTrigger
+        }
+      }
+    )
+
+    /* LANGUAGE TAGS */
+    gsap.fromTo(
+      '.language-tags span',
+      { opacity: 0, y: 25 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        stagger: 0.08,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.languages-section',
+          ...baseTrigger
+        }
+      }
+    )
+
+  }, sectionRef)
+
+  return () => ctx.revert()
+}, [])
+
 
   return (
     <section id="about" className="about" ref={sectionRef}>

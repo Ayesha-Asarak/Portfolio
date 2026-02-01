@@ -9,63 +9,75 @@ gsap.registerPlugin(ScrollTrigger)
 const Education = () => {
   const sectionRef = useRef(null)
   const titleRef = useRef(null)
-  const timelineRef = useRef(null)
-  const educationItemsRef = useRef([])
-  const refereesRef = useRef(null)
+  const eduRefs = useRef([])
 
-  useEffect(() => {
-    const section = sectionRef.current
+useEffect(() => {
+  ScrollTrigger.normalizeScroll(true)
 
-    // Animate title
-    gsap.fromTo(titleRef.current,
-      { opacity: 0, y: 50 },
+  const ctx = gsap.context(() => {
+
+    /* ===== TITLE ===== */
+    gsap.fromTo(
+      titleRef.current,
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
+        duration: 0.6,
+        ease: 'power3.out',
         scrollTrigger: {
-          trigger: section,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
-        }
+          trigger: titleRef.current,
+          start: 'top 90%',
+          onEnter: () => {
+            gsap.fromTo(
+              titleRef.current,
+              { opacity: 0, y: 30 },
+              { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
+            )
+          },
+          onLeaveBack: () => {
+            gsap.set(titleRef.current, { opacity: 0, y: 30 })
+          },
+        },
       }
     )
 
-    // Animate timeline items
-    educationItemsRef.current.forEach((item, index) => {
-      gsap.fromTo(item,
-        { opacity: 0, x: -80 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
+    /* ===== EDUCATION CARDS ===== */
+    ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: 'top 88%',
+      onEnter: () => {
+        gsap.fromTo(
+          eduRefs.current,
+          {
+            opacity: 0,
+            y: 40,
+            scale: 0.96,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            stagger: 0.12,
           }
-        }
-      )
+        )
+      },
+      onLeaveBack: () => {
+        gsap.set(eduRefs.current, {
+          opacity: 0,
+          y: 40,
+          scale: 0.96,
+        })
+      },
     })
 
-    // Animate referees if they exist
-    if (refereesRef.current) {
-      gsap.fromTo(refereesRef.current,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: refereesRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      )
-    }
-  }, [])
+  }, sectionRef)
+
+  return () => ctx.revert()
+}, [])
+
 
   return (
     <section id="education" className="education" ref={sectionRef}>
@@ -75,42 +87,42 @@ const Education = () => {
           <div className="title-underline"></div>
         </div>
 
-        <div className="education-timeline" ref={timelineRef}>
+        <div className="education-grid">
           {config.education.map((edu, index) => (
-            <div 
-              key={index} 
-              className="education-item"
-              ref={el => educationItemsRef.current[index] = el}
+            <div
+              key={index}
+              className="education-card"
+              ref={(el) => (eduRefs.current[index] = el)}
             >
-              <div className="timeline-marker"></div>
-              <div className="education-content">
+              {/* Text content */}
+              <div className="education-text">
+                <div className="edu-period">{edu.period}</div>
                 <h3 className="institution-name">{edu.institution}</h3>
-                <p className="location">{edu.location}</p>
-                <p className="period">{edu.period}</p>
+
+                {edu.description && (
+                  <p className="edu-description">{edu.description}</p>
+                )}
+
                 <p className="degree">{edu.degree}</p>
-                {edu.gpa && <p className="gpa">{edu.gpa}</p>}
+
+                {edu.gpa && (
+                  <div className="gpa">GPA: {edu.gpa}</div>
+                )}
               </div>
+
+              {/* Logo (optional) */}
+              {edu.logo && (
+                <div className="education-logo">
+                  <img
+                    src={edu.logo}
+                    alt={`${edu.institution} logo`}
+                    loading="lazy"
+                  />
+                </div>
+              )}
             </div>
           ))}
         </div>
-
-        {config.showReferees && (
-          <div className="referees-section" ref={refereesRef}>
-            <h3 className="referees-title">Referees</h3>
-            <div className="referees-grid">
-              {config.referees.map((referee, index) => (
-                <div key={index} className="referee-card">
-                  <h4 className="referee-name">{referee.name}</h4>
-                  {referee.title && <p className="referee-title">{referee.title}</p>}
-                  {referee.department && <p className="referee-department">{referee.department}</p>}
-                  {referee.subdepartment && <p className="referee-subdepartment">{referee.subdepartment}</p>}
-                  <p className="referee-institution">{referee.institution}</p>
-                  <a href={`mailto:${referee.email}`} className="referee-email">{referee.email}</a>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   )

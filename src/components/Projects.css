@@ -8,6 +8,7 @@
   gap: 4rem;
 }
 
+/* ================= PROJECT CARD ================= */
 .project-card {
   display: grid;
   grid-template-columns: auto 1fr 350px;
@@ -15,23 +16,16 @@
   align-items: start;
   background-color: var(--light-beige);
   padding: 2.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Disable CSS transitions during GSAP scroll animations to prevent conflicts */
-.project-card.animating {
-  transition: none !important;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  will-change: transform, opacity;
+   border-radius: 20px;
 }
 
 .project-card.reverse {
   background-color: var(--primary-dark);
 }
 
+/* ================= TEXT COLORS (REVERSE) ================= */
 .project-card.reverse .project-title,
 .project-card.reverse .project-description,
 .project-card.reverse .project-contributions li {
@@ -39,7 +33,8 @@
 }
 
 .project-card.reverse .project-subtitle,
-.project-card.reverse .project-tech {
+.project-card.reverse .project-tech,
+.project-card.reverse .tech-icon {
   color: var(--primary-beige);
 }
 
@@ -57,6 +52,7 @@
   color: var(--primary-beige);
 }
 
+/* ================= PROJECT NUMBER ================= */
 .project-number {
   font-family: var(--font-serif);
   font-size: 6rem;
@@ -70,6 +66,7 @@
   color: rgba(198, 190, 181, 0.2);
 }
 
+/* ================= CONTENT ================= */
 .project-content {
   padding: 0.5rem 0;
 }
@@ -91,13 +88,40 @@
   font-weight: 300;
 }
 
-.project-tech {
-  font-size: 0.85rem;
-  color: var(--accent-brown);
+/* ================= TECH PILLS ================= */
+.project-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 1rem;
-  font-weight: 500;
 }
 
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.05);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-pill .tech-icon {
+  font-size: 1.2rem; /* larger icon */
+}
+
+.project-card.reverse .tech-pill {
+  background-color: rgba(255,255,255,0.08);
+}
+
+.project-card.reverse .tech-pill .tech-icon,
+.project-card.reverse .tech-pill .tech-name {
+  color: var(--primary-beige);
+}
+
+/* ================= DESCRIPTION ================= */
 .project-description {
   font-size: 0.95rem;
   line-height: 1.7;
@@ -107,6 +131,7 @@
   font-weight: 300;
 }
 
+/* ================= CONTRIBUTIONS ================= */
 .project-contributions {
   list-style: none;
   display: flex;
@@ -133,22 +158,21 @@
   font-weight: 600;
 }
 
+/* ================= GITHUB LINK ================= */
 .project-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   padding: 0.6rem 1.5rem;
   border: 1px solid var(--primary-dark);
-  color: var(--primary-dark);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
 
-.project-link:hover {
-  background-color: var(--primary-dark);
-  color: var(--light-beige);
+.github-icon {
+  font-size: 1.4rem;
 }
 
+/* ================= IMAGE ================= */
 .project-image {
   height: 300px;
   background-color: var(--primary-dark);
@@ -162,6 +186,8 @@
   height: 100%;
   background: linear-gradient(135deg, var(--accent-brown) 0%, var(--primary-beige) 100%);
   opacity: 0.3;
+  border-radius: 18px;
+
 }
 
 .project-img {
@@ -170,12 +196,14 @@
   object-fit: cover;
   object-position: center;
   transition: transform 0.3s ease;
+  
 }
 
 .project-card:hover .project-img {
   transform: scale(1.05);
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 968px) {
   .project-card {
     grid-template-columns: 1fr;

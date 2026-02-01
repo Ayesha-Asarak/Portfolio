@@ -11,40 +11,33 @@
 
 .header.scrolled {
   padding: 0.75rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
   font-family: var(--font-serif);
   font-size: 2rem;
-  font-weight: 300;
   letter-spacing: 0.3em;
   color: var(--primary-beige);
-  transition: color 0.3s ease;
 }
 
-.logo:hover {
-  color: var(--light-beige);
-}
-
+/* NAV LINKS */
 .nav-links {
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 2.5rem;
 }
 
 .nav-links a {
   color: var(--light-beige);
   font-size: 0.95rem;
-  font-weight: 300;
   letter-spacing: 0.05em;
-  transition: color 0.3s ease;
   position: relative;
 }
 
@@ -59,70 +52,84 @@
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--primary-beige);
-}
-
 .nav-links a:hover::after {
   width: 100%;
 }
 
+/* Resume Button */
+.resume-btn {
+  border: 1px solid var(--primary-beige);
+  padding: 0.5rem 1.3rem;
+  color: var(--primary-beige);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: var(--primary-beige);
+  color: var(--primary-dark);
+}
+
+/* MOBILE BUTTON */
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
   gap: 5px;
   background: none;
   border: none;
-  padding: 0;
 }
 
 .mobile-menu-btn span {
   width: 25px;
   height: 2px;
   background-color: var(--primary-beige);
-  transition: all 0.3s ease;
 }
 
+/* MOBILE NAV */
+.mobile-links {
+  display: none;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: flex;
-    padding: 0.5rem;
-    cursor: pointer;
-    z-index: 1001;
+  .desktop-links,
+  .resume-desktop {
+    display: none;
   }
 
-  .nav-links {
+  .mobile-menu-btn {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .mobile-links {
     position: fixed;
     top: 70px;
     left: 0;
     right: 0;
-    flex-direction: column;
     background-color: var(--primary-dark);
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
   }
 
-  .nav-links.active {
+  .mobile-links.active {
     transform: translateX(0);
   }
 
-  .nav-links a {
-    padding: 0.75rem 0;
-    font-size: 1.1rem;
+  /* Resume outside menu */
+  .resume-mobile {
     display: block;
+    margin: 1rem auto 0;
+    width: fit-content;
   }
+}
 
-  .nav-links a::after {
-    display: none;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    letter-spacing: 0.2em;
-  }
+/* Desktop */
+.resume-mobile {
+  display: none;
 }
